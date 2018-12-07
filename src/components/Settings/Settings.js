@@ -4,10 +4,19 @@ import './Settings.css'
 class Settings extends Component {
 
   state = {
-    timerMinutes: '25',
-    timerSeconds: '00',
-    breakMinutes: '05',
-    breakSeconds: '00'
+    timerMinutes: '',
+    timerSeconds: '',
+    breakMinutes: '',
+    breakSeconds: ''
+  }
+
+  handleChange = inputType => event => {
+    this.setState({[inputType] : this.validate(event.target.value)})
+  }
+
+  validate = (num) => {
+    const value = num.length > 2 ? num.slice(0, 2) : num
+    return value
   }
 
   render() {
@@ -20,6 +29,7 @@ class Settings extends Component {
           <input type="text"
                  className="input-time"
                  value={this.state.timerMinutes}
+                 onChange={this.handleChange('timerMinutes')}
           />
           </div>
           <div className="timer-container">
@@ -27,6 +37,7 @@ class Settings extends Component {
           <input type="text"
                  className="input-time"
                  value={this.state.timerSeconds}
+                 onChange={this.handleChange('timerSeconds')}
           />
           </div>
         </div>
@@ -37,6 +48,7 @@ class Settings extends Component {
           <input type="text"
                  className="input-time"
                  value={this.state.breakMinutes}
+                 onChange={this.handleChange('breakMinutes')}
           />
           </div>
           <div className="timer-container">
@@ -44,6 +56,7 @@ class Settings extends Component {
           <input type="text"
                  className="input-time"
                  value={this.state.breakSeconds}
+                 onChange={this.handleChange('breakSeconds')}
           />
           </div>
         </div>
