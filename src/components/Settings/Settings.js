@@ -14,15 +14,29 @@ class Settings extends Component {
       <div>
         <div>
           <h2>Set Pomodoro time</h2>
-          <p>
-            {this.state.timerMinutes} : {this.state.timerSeconds}
-          </p>
+          <p>Minutes</p>
+          <input type="text"
+                 className="input-time"
+                 value={this.state.timerMinutes}
+          />
+          <p>Seconds</p>
+          <input type="text"
+                 className="input-time"
+                 value={this.state.timerSeconds}
+          />
         </div>
         <div>
           <h2>Set break time</h2>
-          <p>
-            {this.state.breakMinutes} : {this.state.breakSeconds}
-          </p>
+          <p>Minutes</p>
+          <input type="text"
+                 className="input-time"
+                 value={this.state.breakMinutes}
+          />
+          <p>Seconds</p>
+          <input type="text"
+                 className="input-time"
+                 value={this.state.breakSeconds}
+          />
         </div>
       </div>
     )
