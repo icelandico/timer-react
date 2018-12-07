@@ -7,18 +7,19 @@ class Display extends Component {
 
   state = {
     minutes: '25',
-    seconds: '00'
+    seconds: '60'
   }
 
   handleStart = () => {
-    const interval = setInterval(() => {
-      
-      this.setState({
-        minutes: parseInt(this.state.seconds) === 0 ? parseInt(this.state.minutes) - 1 : this.state.minutes,
-        seconds: parseInt(this.state.seconds) !== 0 ? parseInt(this.state.seconds) - 1 : 59
-      })
-    }, 1000)
-  }
+  const interval = setInterval(() => {
+    let minutes = parseInt(this.state.minutes)
+    let seconds = parseInt(this.state.seconds)
+    this.setState({
+      minutes: seconds === 0 ? minutes - 1 : minutes,
+      seconds: seconds !== 0 ? seconds - 1 : 59
+    })
+  }, 1000)
+}
 
   render() {
     return(
