@@ -6,8 +6,8 @@ import NavButtons from '../NavButtons/NavButtons';
 class Display extends Component {
 
   state = {
-    minutes: '25',
-    seconds: '60'
+    minutes: '10',
+    seconds: '9'
   }
 
   handleStart = () => {
