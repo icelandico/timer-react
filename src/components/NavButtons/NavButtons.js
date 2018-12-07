@@ -10,6 +10,10 @@ handleReset = () => {
   this.props.handleReset();
 }
 
+handlePause = () => {
+  this.props.handlePause();
+}
+
   render() {
     return(
       <div>

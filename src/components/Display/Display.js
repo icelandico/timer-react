@@ -31,6 +31,10 @@ handleReset = () => {
   clearInterval(this.interval)
 }
 
+handlePause = () => {
+  clearInterval(this.interval)
+}
+
   render() {
     return(
       <div>
@@ -38,6 +42,7 @@ handleReset = () => {
         <NavButtons 
           handleStart = {this.handleStart}
           handleReset = {this.handleReset}
+          handlePause = {this.handlePause}
         />
         <TimeDisplay
           minutes={this.state.minutes}
