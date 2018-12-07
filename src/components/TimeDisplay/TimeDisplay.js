@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TimeDisplay.css'
 
 class TimeDisplay extends Component {
 
@@ -8,7 +9,7 @@ class TimeDisplay extends Component {
 
   render() {
     return(
-      <div>
+      <div className="timer-display">
         <p className="time-value">{this.leadingZero(this.props.minutes)} : {this.props.seconds === '60' ? '00' : this.leadingZero(this.props.seconds)}</p>
       </div>
     )

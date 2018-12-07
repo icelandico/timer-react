@@ -1,0 +1,11 @@
+.timer-display {
+  margin: 2rem auto;
+  width: 75%;
+  border-radius: 0.5rem;
+  background: #597449;
+  box-shadow: 3px 3px #f7f7f7; }
+
+.time-value {
+  font-size: 8rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-shadow: 1px 1px #fff; }
