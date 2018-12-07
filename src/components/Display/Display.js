@@ -11,7 +11,7 @@ class Display extends Component {
     breakMinutes: '5',
     breakSeconds: '0',
     interval: false,
-    break: true
+    break: false
   }
 
   handleStart = () => {
@@ -38,17 +38,21 @@ handlePause = () => {
   clearInterval(this.interval)
 }
 
-handleSetSettings = (minutes, seconds) => {
+handleSetSettings = (minutes, seconds, breakMinutes, breakSeconds) => {
   this.setState({
     minutes,
-    seconds
+    seconds,
+    breakMinutes,
+    breakSeconds
   })
 }
 
 handleSetDefault = () => {
   this.setState({
     minutes: '25',
-    seconds: '0'
+    seconds: '0',
+    breakMinutes: '5',
+    breakSeconds: '0'
   })
 }
 

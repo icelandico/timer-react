@@ -19,8 +19,8 @@ class Settings extends Component {
     return value
   }
 
-  handleSetSettings = (minutes, seconds) => {
-    this.props.handleSetSettings(minutes, seconds)
+  handleSetSettings = (timerMinutes, timerSeconds, breakMinutes, breakSeconds) => {
+    this.props.handleSetSettings(timerMinutes, timerSeconds, breakMinutes, breakSeconds)
   }
 
   render() {
@@ -63,7 +63,7 @@ class Settings extends Component {
                  onChange={this.handleChange('breakSeconds')}
           />
           <button type="button"
-                  onClick={() => this.handleSetSettings(this.state.timerMinutes, this.state.timerSeconds)}
+                  onClick={() => this.handleSetSettings(this.state.timerMinutes, this.state.timerSeconds, this.state.breakMinutes, this.state.breakSeconds)}
           >
           Set
           </button>
