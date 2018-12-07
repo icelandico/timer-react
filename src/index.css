@@ -1,4 +1,13 @@
+* {
+  box-sizing: border-box;
+  outline: 1px solid red;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1,p {
+  margin: 0;
 }
