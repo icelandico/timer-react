@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class NavButtons extends Component {
 
 handleStart = () => {
-  this.props.handleStart()
+  this.props.handleStart();
+}
+
+handleReset = () => {
+  this.props.handleReset();
 }
 
   render() {
@@ -11,13 +15,13 @@ handleStart = () => {
       <div>
         <button type="button"
                 id="start"
-                onClick={() => this.handleStart()}
+                onClick={this.handleStart}
         >
           Start!
         </button>
         <button type="button"
                 id="pause"
-                onClick={() => this.handlePause()}
+                onClick={this.handleReset}
         >
           Reset
         </button>
@@ -29,9 +33,9 @@ handleStart = () => {
         </button>
         <button type="button"
                 id="reset"
-                onClick={() => this.handleReset()}
+                onClick={() => this.handlePause()}
         >
-          Reset
+          Pause
         </button>
       </div>
     )
