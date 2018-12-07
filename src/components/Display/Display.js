@@ -12,15 +12,15 @@ class Display extends Component {
   }
 
   handleStart = () => {
-  this.interval = setInterval(() => {
-    let minutes = parseInt(this.state.minutes)
-    let seconds = parseInt(this.state.seconds)
-    this.setState({
-      minutes: seconds === 0 ? minutes - 1 : minutes,
-      seconds: seconds !== 0 ? seconds - 1 : 59,
-    })
-  }, 1000)
-}
+    this.interval = setInterval(() => {
+      let minutes = parseInt(this.state.minutes)
+      let seconds = parseInt(this.state.seconds)
+      this.setState({
+        minutes: seconds === 0 ? minutes - 1 : minutes,
+        seconds: seconds !== 0 ? seconds - 1 : 59,
+      })
+    }, 1000)
+  }
 
 handleReset = () => {
   this.setState({
@@ -42,16 +42,25 @@ handleSetSettings = (minutes, seconds) => {
   })
 }
 
+handleSetDefault = () => {
+  this.setState({
+    minutes: '25',
+    seconds: '0'
+  })
+}
+
   render() {
     return(
       <div>
         <Settings 
           handleSetSettings={this.handleSetSettings}
+          handleSetDefault={this.handleSetDefault}
         />
         <NavButtons 
           handleStart = {this.handleStart}
           handleReset = {this.handleReset}
           handlePause = {this.handlePause}
+          handleSetDefault = {this.handleSetDefault}
         />
         <TimeDisplay
           minutes={this.state.minutes}

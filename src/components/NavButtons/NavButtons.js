@@ -14,6 +14,10 @@ handlePause = () => {
   this.props.handlePause();
 }
 
+handleSetDefault = () => {
+  this.props.handleSetDefault();
+}
+
   render() {
     return(
       <div>
@@ -31,13 +35,13 @@ handlePause = () => {
         </button>
         <button type="button"
                 id="default"
-                onClick={() => this.handleSetDefault()}
+                onClick={this.handleSetDefault}
         >
           Default Pomodoro
         </button>
         <button type="button"
                 id="reset"
-                onClick={() => this.handlePause()}
+                onClick={this.handlePause}
         >
           Pause
         </button>
