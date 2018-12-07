@@ -16,6 +16,12 @@ handleStart = () => {
           Start!
         </button>
         <button type="button"
+                id="pause"
+                onClick={() => this.handlePause()}
+        >
+          Reset
+        </button>
+        <button type="button"
                 id="default"
                 onClick={() => this.handleSetDefault()}
         >

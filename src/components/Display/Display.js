@@ -11,7 +11,13 @@ class Display extends Component {
   }
 
   handleStart = () => {
-    alert('CLICKED')
+    const interval = setInterval(() => {
+      
+      this.setState({
+        minutes: parseInt(this.state.seconds) === 0 ? parseInt(this.state.minutes) - 1 : this.state.minutes,
+        seconds: parseInt(this.state.seconds) !== 0 ? parseInt(this.state.seconds) - 1 : 59
+      })
+    }, 1000)
   }
 
   render() {
