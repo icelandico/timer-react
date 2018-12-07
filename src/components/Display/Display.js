@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Settings from '../Settings/Settings';
 import TimeDisplay from '../TimeDisplay/TimeDisplay'
+import NavButtons from '../NavButtons/NavButtons';
 
 class Display extends Component {
 
@@ -13,6 +14,7 @@ class Display extends Component {
     return(
       <div>
         <Settings />
+        <NavButtons />
         <TimeDisplay
           minutes={this.state.minutes}
           seconds={this.state.seconds}
