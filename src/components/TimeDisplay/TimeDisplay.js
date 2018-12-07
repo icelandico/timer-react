@@ -10,7 +10,7 @@ class TimeDisplay extends Component {
   render() {
     return(
       <div>
-        Time here
+        <p className="time-value">{this.state.minutes} : {this.state.seconds}</p>
       </div>
     )
   }

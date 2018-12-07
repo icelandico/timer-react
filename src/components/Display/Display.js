@@ -5,8 +5,8 @@ import TimeDisplay from '../TimeDisplay/TimeDisplay'
 class Display extends Component {
 
   state = {
-    minutes: '',
-    seconds: ''
+    minutes: '25',
+    seconds: '00'
   }
 
   render() {

@@ -46,7 +46,6 @@ class Settings extends Component {
                  value={this.state.breakSeconds}
           />
           </div>
-
         </div>
       </div>
     )
