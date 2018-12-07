@@ -10,11 +10,17 @@ class Display extends Component {
     seconds: '00'
   }
 
+  handleStart = () => {
+    alert('CLICKED')
+  }
+
   render() {
     return(
       <div>
         <Settings />
-        <NavButtons />
+        <NavButtons 
+          handleStart = {this.handleStart}
+        />
         <TimeDisplay
           minutes={this.state.minutes}
           seconds={this.state.seconds}
