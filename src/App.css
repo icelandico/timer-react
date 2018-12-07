@@ -1,4 +1,22 @@
 .welcome {
-  background: yellow;
-  color: white;
-  height: 100px; }
+  background: #6ba848;
+  height: 250px;
+  text-align: center; }
+
+p {
+  font-family: Arial, sans-serif;
+  color: #5c464b;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 250px;
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+@keyframes rotate {
+  0% {
+    font-size: 2rem; }
+  50% {
+    font-size: 3rem; }
+  100% {
+    font-size: 2rem; } }
