@@ -8,7 +8,10 @@ class Display extends Component {
   state = {
     minutes: '25',
     seconds: '0',
-    interval: false
+    breakMinutes: '5',
+    breakSeconds: '0',
+    interval: false,
+    break: true
   }
 
   handleStart = () => {
@@ -65,6 +68,9 @@ handleSetDefault = () => {
         <TimeDisplay
           minutes={this.state.minutes}
           seconds={this.state.seconds}
+          breakMinutes={this.state.breakMinutes}
+          breakSeconds={this.state.breakSeconds}
+          break={this.state.break}
         />
       </div>
     )
