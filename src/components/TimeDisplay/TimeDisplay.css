@@ -1,15 +1,15 @@
 .timer-display {
   margin: 2rem auto;
-  width: 75%;
-  border-radius: 0.5rem;
-  background: #597449;
-  box-shadow: 3px 3px #f7f7f7; }
+  width: 50%;
+  border-radius: 1rem;
+  background: #bcbab8;
+  box-shadow: 5px 5px #625757; }
 
 .time-value {
   margin: 2rem auto;
   font-size: 8rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-shadow: 1px 1px #fff; }
+  text-shadow: 3px 3px #f2f7ff; }
 
 .break {
   opacity: 0.1;
