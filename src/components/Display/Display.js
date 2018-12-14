@@ -18,17 +18,18 @@ class Display extends Component {
     this.interval = setInterval(() => {
       let minutes = parseInt(this.state.minutes)
       let seconds = parseInt(this.state.seconds)
-      this.handleFinish()
       this.setState({
         minutes: seconds === 0 ? minutes - 1 : minutes,
         seconds: seconds !== 0 ? seconds - 1 : 59,
       })
+      this.handleFinish()
     }, 1000)
   }
 
   handleFinish = () => {
     if (!this.state.seconds && !this.state.minutes) {
-      alert('Finished!')
+      this.handleReset()
+      setTimeout(() => alert('Finished!'), 0)
     }
   }
 
