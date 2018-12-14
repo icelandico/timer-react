@@ -28,9 +28,16 @@ class Display extends Component {
 
   handleFinish = () => {
     if (!this.state.seconds && !this.state.minutes) {
-      this.handleReset()
+      this.handleReset();
+      this.handleSwitchBreak();
       setTimeout(() => alert('Finished!'), 0)
     }
+  }
+
+  handleSwitchBreak = () => {
+    this.setState({
+      break: !this.state.break
+    })
   }
 
   handleReset = () => {
