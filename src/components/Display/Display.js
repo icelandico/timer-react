@@ -25,36 +25,36 @@ class Display extends Component {
     }, 1000)
   }
 
-handleReset = () => {
-  this.setState({
-    minutes: '25',
-    seconds: '0',
-    interval: false
-  })
-  clearInterval(this.interval)
-}
+  handleReset = () => {
+    this.setState({
+      minutes: '25',
+      seconds: '0',
+      interval: false
+    })
+    clearInterval(this.interval)
+  }
 
-handlePause = () => {
-  clearInterval(this.interval)
-}
+  handlePause = () => {
+    clearInterval(this.interval)
+  }
 
-handleSetSettings = (minutes, seconds, breakMinutes, breakSeconds) => {
-  this.setState({
-    minutes,
-    seconds,
-    breakMinutes,
-    breakSeconds
-  })
-}
+  handleSetSettings = (minutes, seconds, breakMinutes, breakSeconds) => {
+    this.setState({
+      minutes,
+      seconds,
+      breakMinutes,
+      breakSeconds
+    })
+  }
 
-handleSetDefault = () => {
-  this.setState({
-    minutes: '25',
-    seconds: '0',
-    breakMinutes: '5',
-    breakSeconds: '0'
-  })
-}
+  handleSetDefault = () => {
+    this.setState({
+      minutes: '25',
+      seconds: '0',
+      breakMinutes: '5',
+      breakSeconds: '0'
+    })
+  }
 
   render() {
     return(

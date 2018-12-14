@@ -4,7 +4,13 @@ import './TimeDisplay.css'
 class TimeDisplay extends Component {
 
   leadingZero = (number) => {
-    return number > 9 ? number : '0' + number
+    if (number > 9) {
+      return number
+    } else if (!number) {
+      return '00'
+    } else {
+      return '0' + number
+    }
   }
 
   render() {
