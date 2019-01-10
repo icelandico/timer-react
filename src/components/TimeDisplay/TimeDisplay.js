@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './TimeDisplay.css'
 
-class TimeDisplay extends Component {
-
-  leadingZero = (number) => {
+  function leadingZero(number) {
     if (number > 9) {
       return number
     } else if (!number) {
@@ -13,14 +11,12 @@ class TimeDisplay extends Component {
     }
   }
 
-  render() {
-    return(
-      <div className="timer-display">
-        <p className={this.props.break ? "time-value break" : "time-value"}>{this.leadingZero(this.props.minutes)} : {this.props.seconds === '60' ? '00' : this.leadingZero(this.props.seconds)}</p>
-        <p className={this.props.break ? "time-value" : "time-value break"}>{this.leadingZero(this.props.breakMinutes)} : {this.props.breakSeconds === '60' ? '00' : this.leadingZero(this.props.breakSeconds)}</p>
-      </div>
-    )
-  }
-}
+  const TimeDisplay = ({ isBreak, minutes, seconds, breakMinutes, breakSeconds }) => (
+    <div className="timer-display">
+      <p className={isBreak ? "time-value break" : "time-value"}>{leadingZero(minutes)} : {seconds === '60' ? '00' : leadingZero(seconds)}</p>
+      <p className={isBreak ? "time-value" : "time-value break"}>{leadingZero(breakMinutes)} : {breakSeconds === '60' ? '00' : leadingZero(breakSeconds)}</p>
+    </div>
+  )
+
 
 export default TimeDisplay

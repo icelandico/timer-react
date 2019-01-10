@@ -11,7 +11,7 @@ class Display extends Component {
     breakMinutes: '5',
     breakSeconds: '0',
     interval: false,
-    break: false
+    isBreak: false
   }
 
   handleStart = () => {
@@ -36,7 +36,7 @@ class Display extends Component {
 
   handleSwitchBreak = () => {
     this.setState({
-      break: !this.state.break
+      isBreak: !this.state.isBreak
     })
   }
 
@@ -89,7 +89,7 @@ class Display extends Component {
           seconds={this.state.seconds}
           breakMinutes={this.state.breakMinutes}
           breakSeconds={this.state.breakSeconds}
-          break={this.state.break}
+          isBreak={this.state.isBreak}
         />
       </div>
     )
