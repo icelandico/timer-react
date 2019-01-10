@@ -54,6 +54,7 @@ class Display extends Component {
   }
 
   handleSetSettings = (minutes, seconds, breakMinutes, breakSeconds) => {
+    this.handleReset()
     this.setState({
       minutes,
       seconds,
