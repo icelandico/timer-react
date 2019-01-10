@@ -2,13 +2,12 @@ import React from 'react';
 import './TimeDisplay.css'
 
   function leadingZero(number) {
-    console.log(typeof number)
     if (number > 9) {
       return number
     } else if (!number) {
       return '00'
     } else {
-      return '0' + number.slice(-1)
+      return ('0' + number).slice(-2)
     }
   }
 
