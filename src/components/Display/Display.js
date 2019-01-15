@@ -78,6 +78,8 @@ class Display extends Component {
         <Settings 
           handleSetSettings={this.handleSetSettings}
           handleSetDefault={this.handleSetDefault}
+          handleReset={this.resetSettings}
+          time={this.state}
         />
         <NavButtons 
           handleStart = {this.handleStart}
