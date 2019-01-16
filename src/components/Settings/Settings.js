@@ -4,10 +4,10 @@ import './Settings.css'
 class Settings extends Component {
 
   state = {
-    timerMinutes: this.props.time.minutes,
-    timerSeconds: this.props.time.seconds,
-    breakMinutes: this.props.time.breakMinutes,
-    breakSeconds: this.props.time.breakSeconds
+    timerMinutes: '25',
+    timerSeconds: '0',
+    breakMinutes: '5',
+    breakSeconds: '0',
   }
 
   handleChange = inputType => event => {
@@ -16,16 +16,6 @@ class Settings extends Component {
 
   handleSetSettings = (timerMinutes, timerSeconds, breakMinutes, breakSeconds) => {
     this.props.handleSetSettings(timerMinutes, timerSeconds, breakMinutes, breakSeconds)
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.time !== prevProps.time)
-      this.setState({
-        timerMinutes: '',
-        timerSeconds: '',
-        breakMinutes: '',
-        breakSeconds: ''
-      })
   }
 
   render() {

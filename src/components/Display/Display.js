@@ -16,19 +16,28 @@ class Display extends Component {
 
   handleStart = () => {
     this.interval = setInterval(() => {
-      let minutes = parseInt(this.state.minutes)
-      let seconds = parseInt(this.state.seconds)
-      this.setState({
-        minutes: seconds === 0 ? minutes - 1 : minutes,
-        seconds: seconds !== 0 ? seconds - 1 : 59,
-      })
+      if (!this.state.isBreak) {
+        let minutes = parseInt(this.state.minutes)
+        let seconds = parseInt(this.state.seconds)
+        this.setState({
+          minutes: seconds === 0 ? minutes - 1 : minutes,
+          seconds: seconds !== 0 ? seconds - 1 : 59,
+        })
+      } else {
+        let minutes = parseInt(this.state.breakMinutes)
+        let seconds = parseInt(this.state.breakSeconds)
+        this.setState({
+          breakMinutes: seconds === 0 ? minutes - 1 : minutes,
+          breakSeconds: seconds !== 0 ? seconds - 1 : 59,
+        })
+      }
       this.handleFinish()
     }, 1000)
   }
 
   handleFinish = () => {
     if (!this.state.seconds && !this.state.minutes) {
-      this.handleReset();
+      clearInterval(this.interval)
       this.handleSwitchBreak();
       setTimeout(() => alert('Finished!'), 0)
     }
@@ -40,27 +49,19 @@ class Display extends Component {
     })
   }
 
-  handleReset = () => {
-    this.setState({
-      minutes: '25',
-      seconds: '0',
-      interval: false
-    })
-    clearInterval(this.interval)
-  }
-
   handlePause = () => {
     clearInterval(this.interval)
   }
 
   handleSetSettings = (minutes, seconds, breakMinutes, breakSeconds) => {
-    this.handleReset()
     this.setState({
       minutes,
       seconds,
       breakMinutes,
-      breakSeconds
+      breakSeconds,
+      interval: false
     })
+    clearInterval(this.interval)
   }
 
   handleSetDefault = () => {
@@ -78,12 +79,9 @@ class Display extends Component {
         <Settings 
           handleSetSettings={this.handleSetSettings}
           handleSetDefault={this.handleSetDefault}
-          handleReset={this.resetSettings}
-          time={this.state}
         />
         <NavButtons 
           handleStart = {this.handleStart}
-          handleReset = {this.handleReset}
           handlePause = {this.handlePause}
           handleSetDefault = {this.handleSetDefault}
         />

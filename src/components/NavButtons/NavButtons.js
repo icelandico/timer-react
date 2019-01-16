@@ -6,10 +6,6 @@ handleStart = () => {
   this.props.handleStart();
 }
 
-handleReset = () => {
-  this.props.handleReset();
-}
-
 handlePause = () => {
   this.props.handlePause();
 }
@@ -29,21 +25,15 @@ handleSetDefault = () => {
         </button>
         <button type="button"
                 id="pause"
-                onClick={this.handleReset}
+                onClick={this.handlePause}
         >
-          Reset
+          Pause
         </button>
         <button type="button"
                 id="default"
                 onClick={this.handleSetDefault}
         >
           Default Pomodoro
-        </button>
-        <button type="button"
-                id="reset"
-                onClick={this.handlePause}
-        >
-          Pause
         </button>
       </div>
     )
