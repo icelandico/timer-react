@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button'
 
 class NavButtons extends Component {
 
@@ -17,24 +18,27 @@ handleSetDefault = () => {
   render() {
     return(
       <div>
-        <button type="button"
-                id="start"
-                onClick={this.handleStart}
+        <Button
+          type="button"
+          id="start"
+          onClick={this.handleStart}
         >
           Start!
-        </button>
-        <button type="button"
-                id="pause"
-                onClick={this.handlePause}
+        </Button>
+        <Button
+          type="button"
+          id="pause"
+          onClick={this.handlePause}
         >
           Pause
-        </button>
-        <button type="button"
-                id="default"
-                onClick={this.handleSetDefault}
+        </Button>
+        <Button
+          type="button"
+          id="default"
+          onClick={this.handleSetDefault}
         >
           Default Pomodoro
-        </button>
+        </Button>
       </div>
     )
   }
