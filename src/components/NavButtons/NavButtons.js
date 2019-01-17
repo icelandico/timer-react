@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class NavButtons extends Component {
 
 handleStart = () => {
-  this.props.handleStart();
+  return this.props.timeRunning ? null : this.props.handleStart();
 }
 
 handlePause = () => {

@@ -15,6 +15,11 @@ class Display extends Component {
   }
 
   handleStart = () => {
+    this.switchInterval()
+    this.handleInterval()
+  }
+
+  handleInterval = () => {
     this.interval = setInterval(() => {
       if (!this.state.isBreak) {
         let minutes = parseInt(this.state.minutes)
@@ -36,10 +41,18 @@ class Display extends Component {
   }
 
   handleFinish = () => {
-    if (!this.state.seconds && !this.state.minutes) {
-      clearInterval(this.interval)
-      this.handleSwitchBreak();
-      setTimeout(() => alert('Finished!'), 0)
+    if (!this.state.isBreak) { 
+      if (!this.state.seconds && !this.state.minutes) {
+        clearInterval(this.interval)
+        this.handleSwitchBreak();
+        setTimeout(() => alert('Finished!'), 0)
+      }
+    } else {
+      if (!this.state.breakSeconds && !this.state.breakMinutes) {
+        clearInterval(this.interval)
+        this.handleSwitchBreak();
+        setTimeout(() => alert('Finished!'), 0)
+      }
     }
   }
 
@@ -49,7 +62,14 @@ class Display extends Component {
     })
   }
 
+  switchInterval = () => {
+    this.setState({
+      interval: !this.state.interval
+    })
+  }
+
   handlePause = () => {
+    this.switchInterval()
     clearInterval(this.interval)
   }
 
@@ -74,6 +94,7 @@ class Display extends Component {
   }
 
   render() {
+    const timeRunning = this.state.interval
     return(
       <div>
         <Settings 
@@ -84,6 +105,7 @@ class Display extends Component {
           handleStart = {this.handleStart}
           handlePause = {this.handlePause}
           handleSetDefault = {this.handleSetDefault}
+          timeRunning={timeRunning}
         />
         <TimeDisplay
           minutes={this.state.minutes}
