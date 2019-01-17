@@ -45,12 +45,14 @@ class Display extends Component {
       if (!this.state.seconds && !this.state.minutes) {
         clearInterval(this.interval)
         this.handleSwitchBreak();
+        this.switchInterval()
         setTimeout(() => alert('Finished!'), 0)
       }
     } else {
       if (!this.state.breakSeconds && !this.state.breakMinutes) {
         clearInterval(this.interval)
         this.handleSwitchBreak();
+        this.switchInterval()
         setTimeout(() => alert('Finished!'), 0)
       }
     }
