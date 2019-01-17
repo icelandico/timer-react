@@ -4,19 +4,14 @@ import './Settings.css'
 class Settings extends Component {
 
   state = {
-    timerMinutes: '',
-    timerSeconds: '',
-    breakMinutes: '',
-    breakSeconds: ''
+    timerMinutes: '25',
+    timerSeconds: '0',
+    breakMinutes: '5',
+    breakSeconds: '0',
   }
 
   handleChange = inputType => event => {
-    this.setState({[inputType] : this.validate(event.target.value)})
-  }
-
-  validate = (num) => {
-    const value = num.length > 2 ? num.slice(0, 2) : num
-    return value
+    this.setState({[inputType] : event.target.value})
   }
 
   handleSetSettings = (timerMinutes, timerSeconds, breakMinutes, breakSeconds) => {
@@ -34,6 +29,7 @@ class Settings extends Component {
                  className="input-time"
                  value={this.state.timerMinutes}
                  onChange={this.handleChange('timerMinutes')}
+                 maxLength="2"
           />
           </div>
           <div className="timer-container">
@@ -42,6 +38,7 @@ class Settings extends Component {
                  className="input-time"
                  value={this.state.timerSeconds}
                  onChange={this.handleChange('timerSeconds')}
+                 maxLength="2"
           />
           </div>
         </div>
@@ -53,6 +50,7 @@ class Settings extends Component {
                  className="input-time"
                  value={this.state.breakMinutes}
                  onChange={this.handleChange('breakMinutes')}
+                 maxLength="2"
           />
           </div>
           <div className="timer-container">
@@ -61,6 +59,7 @@ class Settings extends Component {
                  className="input-time"
                  value={this.state.breakSeconds}
                  onChange={this.handleChange('breakSeconds')}
+                 maxLength="2"
           />
           <button type="button"
                   onClick={() => this.handleSetSettings(this.state.timerMinutes, this.state.timerSeconds, this.state.breakMinutes, this.state.breakSeconds)}
@@ -73,8 +72,6 @@ class Settings extends Component {
     )
   }
 }
-//
-
 //
 
 export default Settings
