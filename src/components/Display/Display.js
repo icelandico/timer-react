@@ -10,6 +10,12 @@ class Display extends Component {
     seconds: '0',
     breakMinutes: '5',
     breakSeconds: '0',
+    initialTime: {
+      minutes: '25',
+      seconds: '0',
+      breakMinutes: '5',
+      breakSeconds: '0'
+    },
     interval: false,
     isBreak: false
   }
@@ -53,9 +59,19 @@ class Display extends Component {
         clearInterval(this.interval)
         this.handleSwitchBreak();
         this.switchInterval()
+        this.handleResetTime()
         setTimeout(() => alert('Finished!'), 0)
       }
     }
+  }
+
+  handleResetTime = () => {
+    this.setState({
+      minutes: this.state.initialTime.minutes,
+      seconds: this.state.initialTime.seconds,
+      breakMinutes: this.state.initialTime.breakMinutes,
+      breakSeconds: this.state.initialTime.breakSeconds,
+    })
   }
 
   handleSwitchBreak = () => {
@@ -81,7 +97,13 @@ class Display extends Component {
       seconds,
       breakMinutes,
       breakSeconds,
-      interval: false
+      interval: false,
+      initialTime: {
+        minutes,
+        seconds,
+        breakMinutes,
+        breakSeconds
+      }
     })
     clearInterval(this.interval)
   }
