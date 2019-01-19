@@ -1,12 +1,16 @@
 import React from 'react';
-import './Header.css'
+import { HeaderStyles } from './Header-styles';
+import withStyles from "@material-ui/core/styles/withStyles";
 
-const Header = () => {
+const Header = (props) => {
+
+  const { classes } = props
+
   return(
-    <div className="header-container">
+    <div className={classes.headerContainer}>
       <h1>Timer App</h1>
     </div>
   )
 }
 
-export default Header
+export default withStyles(HeaderStyles)(Header)
