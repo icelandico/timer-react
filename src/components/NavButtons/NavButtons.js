@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { NavButtonsStyles } from './NavButtons-styles'
-import withStyles from '@material-ui/core/styles/withStyles';
 import ActionButton from '../StyleComponents/Button'
 
 class NavButtons extends Component {
@@ -44,4 +42,4 @@ class NavButtons extends Component {
     }
   }
 
-export default NavButtons = withStyles(NavButtonsStyles)(NavButtons)
+export default NavButtons
