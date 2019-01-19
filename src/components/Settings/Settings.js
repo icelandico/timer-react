@@ -54,7 +54,7 @@ class SettingsComponent extends Component {
             margin="normal"
             variant="filled"
             defaultValue={this.state.timerSeconds}
-            onChange={this.handleChange('timerMinutes')}
+            onChange={this.handleChange('timerSeconds')}
             type="text"
             inputProps={{
               maxLength: 2,

@@ -1,14 +1,17 @@
 export const SettingsStyles = {
   settings: {
     width: '30%',
-    margin: '0 auto'
+    margin: '0 auto',
+    '& h2': {
+      fontSize: '1rem'
+    }
   },
   settingsContainer: {
     display: 'flex',
     justifyContent: 'center',
   },
   input: {
-    width: '50%',
+    width: '80%',
     height: '3rem',
   },
   setButton: {

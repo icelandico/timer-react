@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Settings from '../Settings/Settings';
 import TimeDisplay from '../TimeDisplay/TimeDisplay'
 import NavButtons from '../NavButtons/NavButtons';
+import { DisplayStyles } from './Display-styles';
+import withStyles from "@material-ui/core/styles/withStyles";
 
 class Display extends Component {
 
@@ -117,10 +119,14 @@ class Display extends Component {
     })
   }
 
+  get classes() {
+    return this.props.classes
+  }
+
   render() {
     const timeRunning = this.state.interval
     return(
-      <div>
+      <div className={this.classes.main}>
         <Settings 
           handleSetSettings={this.handleSetSettings}
           handleSetDefault={this.handleSetDefault}
@@ -143,4 +149,4 @@ class Display extends Component {
   }
 }
 
-export default Display
+export default withStyles(DisplayStyles)(Display)
