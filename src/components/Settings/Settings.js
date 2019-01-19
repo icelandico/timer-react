@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import './Settings.css'
+import TextField from '@material-ui/core/TextField';
+import classNames from 'classnames';
+import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import { SettingsStyles } from './Settings-styles';
+import ActionButton from '../StyleComponents/Button'
 
-class Settings extends Component {
+class SettingsComponent extends Component {
 
   state = {
     timerMinutes: '25',
     timerSeconds: '0',
     breakMinutes: '5',
     breakSeconds: '0',
+  }
+
+  get classes() {
+    return this.props.classes
   }
 
   handleChange = inputType => event => {
@@ -20,53 +28,80 @@ class Settings extends Component {
 
   render() {
     return(
-      <div>
-        <div>
-          <h2>Set Pomodoro time</h2>
-          <div className="timer-container">
+      <div className={this.classes.settings}>
+        <h2>Set Pomodoro time</h2>
+        <div className={this.classes.settingsContainer}>
+          <div>
           <p>Minutes</p>
-          <input type="text"
-                 className="input-time"
-                 value={this.state.timerMinutes}
-                 onChange={this.handleChange('timerMinutes')}
-                 maxLength="2"
+          <TextField
+            className={this.classes.input}
+            id="filled-uncontrolled"
+            margin="normal"
+            variant="filled"
+            defaultValue={this.state.timerMinutes}
+            onChange={this.handleChange('timerMinutes')}
+            type="text"
+            inputProps={{
+              maxLength: 2,
+            }}
           />
           </div>
-          <div className="timer-container">
+          <div>
           <p>Seconds</p>
-          <input type="text"
-                 className="input-time"
-                 value={this.state.timerSeconds}
-                 onChange={this.handleChange('timerSeconds')}
-                 maxLength="2"
+          <TextField
+            className={this.classes.input}
+            id="filled-uncontrolled"
+            margin="normal"
+            variant="filled"
+            defaultValue={this.state.timerSeconds}
+            onChange={this.handleChange('timerMinutes')}
+            type="text"
+            inputProps={{
+              maxLength: 2
+            }}
           />
           </div>
         </div>
+        <h2>Set break time</h2>
+        <div className={this.classes.settingsContainer}>
+          <div>
+            <p>Minutes</p>
+            <TextField
+              className={this.classes.input}
+              id="filled-uncontrolled"
+              margin="normal"
+              variant="filled"
+              defaultValue={this.state.breakMinutes}
+              onChange={this.handleChange('breakMinutes')}
+              type="text"
+              inputProps={{
+                maxLength: 2,
+              }}
+            />
+          </div>
+          <div>
+            <p>Seconds</p>
+            <TextField
+              className={this.classes.input}
+              id="filled-uncontrolled"
+              margin="normal"
+              variant="filled"
+              defaultValue={this.state.breakSeconds}
+              onChange={this.handleChange('breakSeconds')}
+              type="text"
+              inputProps={{
+                maxLength: 2
+              }}
+            />
+          </div>
+        </div>
         <div>
-          <h2>Set break time</h2>
-          <div className="timer-container">
-          <p>Minutes</p>
-          <input type="text"
-                 className="input-time"
-                 value={this.state.breakMinutes}
-                 onChange={this.handleChange('breakMinutes')}
-                 maxLength="2"
-          />
-          </div>
-          <div className="timer-container">
-          <p>Seconds</p>
-          <input type="text"
-                 className="input-time"
-                 value={this.state.breakSeconds}
-                 onChange={this.handleChange('breakSeconds')}
-                 maxLength="2"
-          />
-          <button type="button"
-                  onClick={() => this.handleSetSettings(this.state.timerMinutes, this.state.timerSeconds, this.state.breakMinutes, this.state.breakSeconds)}
+          <ActionButton
+            className={this.classes.setButton}
+            onClick={() => this.handleSetSettings(this.state.timerMinutes, this.state.timerSeconds, this.state.breakMinutes, this.state.breakSeconds)}
           >
-          Set
-          </button>
-          </div>
+            Set
+            </ActionButton>
         </div>
       </div>
     )
@@ -74,4 +109,5 @@ class Settings extends Component {
 }
 //
 
+export const Settings = withStyles(SettingsStyles)(SettingsComponent)
 export default Settings
