@@ -8,11 +8,12 @@ export const SettingsStyles = {
     justifyContent: 'center',
   },
   input: {
-    width: '75%',
-    textAlign: 'right'
+    width: '50%',
+    height: '3rem',
   },
   setButton: {
-    width: '75%',
+    margin: '1rem',
+    width: '50%',
     backgroundColor: '#cca222'
   }
 }

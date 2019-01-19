@@ -42,6 +42,7 @@ class SettingsComponent extends Component {
             type="text"
             inputProps={{
               maxLength: 2,
+              style: { textAlign: 'center' }
             }}
           />
           </div>
@@ -56,7 +57,8 @@ class SettingsComponent extends Component {
             onChange={this.handleChange('timerMinutes')}
             type="text"
             inputProps={{
-              maxLength: 2
+              maxLength: 2,
+              style: { textAlign: 'center' }
             }}
           />
           </div>
@@ -75,6 +77,7 @@ class SettingsComponent extends Component {
               type="text"
               inputProps={{
                 maxLength: 2,
+                style: { textAlign: 'center' }
               }}
             />
           </div>
@@ -89,7 +92,8 @@ class SettingsComponent extends Component {
               onChange={this.handleChange('breakSeconds')}
               type="text"
               inputProps={{
-                maxLength: 2
+                maxLength: 2,
+                style: { textAlign: 'center' }
               }}
             />
           </div>
