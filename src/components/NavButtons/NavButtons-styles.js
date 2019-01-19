@@ -1,7 +1,5 @@
-
-export const NavButtonsStyles = () => ({
+export const NavButtonsStyles = {
   primary: {
-    backgroundColor: '#000',
-    fontSize: '2rem'
+    backgroundColor: '#226C5B',
   }
-})
+}

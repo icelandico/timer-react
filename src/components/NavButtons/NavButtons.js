@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button'
-// import NavButtonsStyles from './NavButtons-styles'
-import { withStyles } from '@material-ui/core/styles';
+import { NavButtonsStyles } from './NavButtons-styles'
+import withStyles from '@material-ui/core/styles/withStyles';
+import ActionButton from '../StyleComponents/Button'
 
-const styles = () => ({
-  primary: {
-    backgroundColor: '#22a',
-    fontSize: '1rem'
-  }
-})
-
-class NavButtonsCmp extends Component {
+class NavButtons extends Component {
 
   get classes() {
     return this.props.classes
@@ -31,31 +24,24 @@ class NavButtonsCmp extends Component {
     render() {
       return(
         <div>
-          <Button
-            type="button"
-            id="start"
+          <ActionButton
             onClick={this.handleStart}
-            className={this.classes.primary}
           >
             Start!
-          </Button>
-          <Button
-            type="button"
-            id="pause"
+          </ActionButton>
+          <ActionButton
             onClick={this.handlePause}
           >
             Pause
-          </Button>
-          <Button
-            type="button"
-            id="default"
+          </ActionButton>
+          <ActionButton
             onClick={this.handleSetDefault}
           >
             Default Pomodoro
-          </Button>
+          </ActionButton>
         </div>
       )
     }
   }
 
-export default withStyles(styles)(NavButtonsCmp)
+export default NavButtons = withStyles(NavButtonsStyles)(NavButtons)
