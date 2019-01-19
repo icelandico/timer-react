@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-import classNames from 'classnames';
 import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
 import { SettingsStyles } from './Settings-styles';
 import ActionButton from '../StyleComponents/Button'

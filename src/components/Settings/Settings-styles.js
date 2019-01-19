@@ -12,6 +12,7 @@ export const SettingsStyles = {
     textAlign: 'right'
   },
   setButton: {
+    width: '75%',
     backgroundColor: '#cca222'
   }
 }
