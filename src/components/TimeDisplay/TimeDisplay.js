@@ -21,10 +21,12 @@ class TimeDisplayer extends Component {
 
   render() {
     const { isBreak, minutes, seconds, breakMinutes, breakSeconds } = this.props
+    const breakStyle = `${this.classes.timeValue} ${this.classes.break}`
+    const noBreakStyle = this.classes.timeValue
     return (
       <div className={this.classes.timerDisplay}>
-        <p className={isBreak ? `${this.classes.timeValue} ${this.classes.break}` : this.classes.timeValue}>{leadingZero(minutes)} : {seconds === '60' ? '00' : leadingZero(seconds)}</p>
-        <p className={isBreak ? this.classes.timeValue : `${this.classes.timeValue} ${this.classes.break}`}>{leadingZero(breakMinutes)} : {breakSeconds === '60' ? '00' : leadingZero(breakSeconds)}</p>
+        <p className={isBreak ? breakStyle : noBreakStyle}>{this.leadingZero(minutes)} : {seconds === '60' ? '00' : this.leadingZero(seconds)}</p>
+        <p className={isBreak ? noBreakStyle : breakStyle}>{this.leadingZero(breakMinutes)} : {breakSeconds === '60' ? '00' : this.leadingZero(breakSeconds)}</p>
       </div>
     );
   }
