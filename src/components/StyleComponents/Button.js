@@ -13,6 +13,9 @@ const styles = {
     height: 48,
     boxShadow: '0 3px 2px 2px rgba(162, 149, 135, .3)',
     margin: '5px 2px',
+    '&:hover': {
+      backgroundColor: '#aaa'
+    }
   },
 };
 
