@@ -31,12 +31,6 @@ class TimeDisplayer extends Component {
     );
   }
 }
-  
-
-TimeDisplayer.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
 
 export const TimeDisplay = withStyles(TimeDisplayStyles)(TimeDisplayer)
 export default TimeDisplay

@@ -110,7 +110,6 @@ class SettingsComponent extends Component {
     )
   }
 }
-//
 
 export const Settings = withStyles(SettingsStyles)(SettingsComponent)
 export default Settings

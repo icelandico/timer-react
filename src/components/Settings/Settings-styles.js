@@ -1,6 +1,6 @@
 export const SettingsStyles = {
   settings: {
-    width: '30%',
+    width: '50%',
     margin: '0 auto',
     '& h2': {
       fontSize: '1rem'
@@ -13,6 +13,9 @@ export const SettingsStyles = {
   input: {
     width: '80%',
     height: '3rem',
+    '& input': {
+      fontSize: '1.5rem',
+    }
   },
   setButton: {
     margin: '1rem',
