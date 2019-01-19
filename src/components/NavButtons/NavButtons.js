@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ActionButton from '../StyleComponents/Button';
-import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { NavButtonsStyles } from './NavButtons-styles'
 
 class NavButtonsComponent extends Component {

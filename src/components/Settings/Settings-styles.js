@@ -13,7 +13,7 @@ export const SettingsStyles = {
   },
   setButton: {
     margin: '1rem',
-    width: '50%',
+    width: '30%',
     backgroundColor: '#cca222'
   }
 }
