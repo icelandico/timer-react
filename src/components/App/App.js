@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header'
-import './App.css';
+import { AppStyles } from './App-styles';
 import Display from '../Display/Display';
+import withStyles from "@material-ui/core/styles/withStyles";
 
 class App extends Component {
+
+  get classes() {
+    return this.props.classes
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className={this.classes.app}>
         <Header />
         <Display />
       </div>
@@ -14,4 +20,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withStyles(AppStyles)(App);

@@ -1,5 +1,3 @@
-import { Z_BLOCK } from "zlib";
-
 export const TimeDisplayStyles = {
   timerDisplay: {
     margin: '2rem auto',
@@ -7,7 +5,8 @@ export const TimeDisplayStyles = {
     flexDirection: 'column',
     '& p': {
       backgroundColor: '#bcbab8',
-      padding: '1rem'
+      padding: '1rem',
+      borderRadius: '15px'
     }
   },
   timeValue: {
